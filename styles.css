@@ -1,0 +1,18 @@
+html {
+    font-family: sans-serif;
+}
+
+#page-heading {
+    text-align: center;
+    font-size: 45px;
+    margin: 35px;
+}
+
+#container {
+    height: 600px;
+    width: 600px;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 70px auto;
+    box-shadow: -4px 5px 6px 2px #959393;
+}
