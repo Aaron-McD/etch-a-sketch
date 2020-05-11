@@ -2,6 +2,10 @@ html {
     font-family: sans-serif;
 }
 
+.pixel {
+    background-color: white;
+}
+
 #page-heading {
     text-align: center;
     font-size: 45px;
@@ -11,8 +15,10 @@ html {
 #container {
     height: 600px;
     width: 600px;
-    border-radius: 10px;
     padding: 0px;
     margin: 70px auto;
     box-shadow: -4px 5px 6px 2px #959393;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
