@@ -2,8 +2,60 @@ html {
     font-family: sans-serif;
 }
 
+h2 {
+    font-size: 25px;
+}
+
 .pixel {
     background-color: white;
+}
+
+.color-button {
+    font-size: 20px;
+}
+
+#repixellate {
+    font-size: 20px;
+    width: 60%;
+}
+
+#new-pixels {
+    width: 90%;
+    margin: 29px;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+}
+
+#reset {
+    font-size: 20px;
+    width: 60%;
+}
+
+#canvas-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#color-pallete {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 600px;
+    justify-content: space-between;
+    margin-left: 80px;
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
 }
 
 #page-heading {

@@ -3,11 +3,29 @@ let canvasHeight = 600;
 let rowSize = 16;
 let divArray = [];
 let isDrawing = false;
+let color = 'black'
 
+const resetButton = document.querySelector('#reset');
+const colorButtons = document.querySelectorAll('.color-button');
 const canvas = document.querySelector('#container');
 const htmlDoc = document.querySelector('html');
 htmlDoc.addEventListener('mousedown', () => mouseDown());
 htmlDoc.addEventListener('mouseup', () => mouseUp());
+colorButtons.forEach((button) => {
+    button.addEventListener('click', (e) => changeColor(e));
+});
+
+resetButton.addEventListener('click', () => resetCanvas());
+
+function resetCanvas() {
+    divArray.forEach((div) => {
+        div.style.backgroundColor = 'white';
+    });
+}
+
+function changeColor(e) {
+    color = e.target.textContent.toLowerCase();
+}
 
 function mouseDown() {
     isDrawing = true;
@@ -19,7 +37,7 @@ function mouseUp() {
 
 function recolor(e) {
     if(isDrawing) {
-        e.target.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = `${color}`;
     }
 }
 
