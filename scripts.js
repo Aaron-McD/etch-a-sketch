@@ -5,6 +5,8 @@ let divArray = [];
 let isDrawing = false;
 let color = 'black'
 
+const pixelSizeInput = document.querySelector('#new-pixels');
+const pixelatte = document.querySelector('#repixellate');
 const resetButton = document.querySelector('#reset');
 const colorButtons = document.querySelectorAll('.color-button');
 const canvas = document.querySelector('#container');
@@ -16,6 +18,7 @@ colorButtons.forEach((button) => {
 });
 
 resetButton.addEventListener('click', () => resetCanvas());
+pixelatte.addEventListener('click', () => resize());
 
 function resetCanvas() {
     divArray.forEach((div) => {
@@ -41,6 +44,21 @@ function recolor(e) {
     }
 }
 
+function adjustGrid() {
+    let newStyle = "";
+    for(i = 0; i < rowSize; i++) {
+        newStyle += '1fr ';
+    }
+    canvas.style.gridTemplateColumns = newStyle;
+    canvas.style.gridTemplateRows = newStyle;
+}
+
+function clearCanvas() {
+    for(i = 0; i < rowSize * rowSize; i++) {
+        canvas.removeChild(divArray[i]);
+    }
+}
+
 function fillArray() {
     for(i = 0; i < rowSize * rowSize; i++) {
         newPixel = document.createElement('div');
@@ -58,5 +76,22 @@ function fillCanvas() {
     }
 }
 
+function resize() {
+    newSize = parseInt(pixelSizeInput.value);
+    if(newSize != newSize) {
+        alert("That isn't a proper value for pixels.");
+    } else if(newSize > 128 || newSize < 16) {
+        alert("Only use values between 16 and 128"); 
+    } else {
+        clearCanvas();
+        rowSize = newSize;
+        adjustGrid();
+        divArray = [];
+        fillArray();
+        fillCanvas();
+    }
+}
+
+adjustGrid();
 fillArray();
 fillCanvas();
